@@ -24,10 +24,10 @@ Add your custom configuration to your `package.json` (in your application's root
 ```json
 // Aliases
 "_moduleAliases": {
-  "@root"      : ".", // Application's root
+  "@root"      : ".",
   "@deep"      : "src/some/very/deep/directory/or/file",
   "@my_module" : "lib/some-file.js",
-  "something"  : "src/foo", // Or without @. Actually, it could be any string
+  "something"  : "src/foo",
 }
 
 // Custom module directories, just like `node_modules` but with your private modules (optional)
