@@ -1,9 +1,9 @@
 import Path from 'path';
 
-type FuncNodeModulePaths = (from: string) => string[]
-type FuncResolveFileName = (request: string, parent: NodeModule, ...args: unknown[]) => string
+export type FuncNodeModulePaths = (from: string) => string[]
+export type FuncResolveFileName = (request: string, parent: NodeModule, ...args: unknown[]) => string
 
-interface ModuleAliasDict {
+export interface ModuleAliasDict {
   [key: string]: ((from: string, request: string, alias: string) => string) | string
 }
 
@@ -113,7 +113,7 @@ export class ModuleAlias {
     }
 
     let npmPackage;
-    let base;
+    let base: string;
     for (let i in candidatePackagePaths) {
       try {
         base = candidatePackagePaths[i];
@@ -123,6 +123,7 @@ export class ModuleAlias {
         // noop
       }
     }
+    base = base || __dirname;
 
     if (typeof npmPackage !== 'object') {
       let pathString = candidatePackagePaths.join(',\n');
@@ -274,7 +275,7 @@ export class ModuleAlias {
     // Modify parent before passing to guarantee that module paths are included.
     // This is kind of a hack to fix an issue with parent paths not populating correctly after hot-module reload.
     //   Cause of actual bug is unknown, but this makes things work.
-    const paths = {};
+    const paths: { [key: string]: boolean } = {};
     for (let path of [...self.modulePaths, ...parent.paths]) {
       paths[path] = true;
     }
