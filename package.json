@@ -1,0 +1,29 @@
+{
+  "name": "@lukecsamuel/ts-module-alias",
+  "description": "Create aliases of directories and register custom module paths",
+  "version": "1.0.0",
+  "scripts": {},
+  "keywords": [
+    "extend",
+    "modules",
+    "node",
+    "path",
+    "resolve"
+  ],
+  "license": "MIT",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@types/node": "^14.14.9",
+    "typescript": "^4.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test"
+    }
+  }
+}
