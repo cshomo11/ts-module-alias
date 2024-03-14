@@ -276,7 +276,8 @@ export class ModuleAlias {
     // This is kind of a hack to fix an issue with parent paths not populating correctly after hot-module reload.
     //   Cause of actual bug is unknown, but this makes things work.
     const paths: { [key: string]: boolean } = {};
-    for (let path of [...self.modulePaths, ...parent.paths]) {
+    const moduleAndParentPaths = parent?.paths ? [...self.modulePaths, ...parent.paths] : self.modulePaths;
+    for (let path of moduleAndParentPaths) {
       paths[path] = true;
     }
     parent.paths = Object.keys(paths);
