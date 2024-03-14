@@ -2,6 +2,7 @@
   "name": "@cbsi-cmg/ts-module-alias",
   "description": "Create aliases of directories and register custom module paths",
   "version": "1.0.2",
+  "private": true,
   "scripts": {
     "prepare": "tsc"
   },
