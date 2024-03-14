@@ -280,7 +280,9 @@ export class ModuleAlias {
     for (let path of moduleAndParentPaths) {
       paths[path] = true;
     }
-    parent.paths = Object.keys(paths);
+    if (parent) {
+      parent.paths = Object.keys(paths);
+    }
 
     return self.oldResolveFilename.call(this, request, parent, ...args);
   }
