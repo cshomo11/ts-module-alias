@@ -12,6 +12,10 @@
     "path",
     "resolve"
   ],
+  "engines": {
+    "node": ">=18",
+    "npm": ">=7"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
