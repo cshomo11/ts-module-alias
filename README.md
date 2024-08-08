@@ -1,11 +1,12 @@
+# ts-module-alias - CNET Group Fork
+
 This package is a major refactor of [ilearnio/module-alias](https://github.com/ilearnio/module-alias) using TypeScript.  This package changes some behaviors of the original.  Namely:
 
 1. More recently added paths take priority over existing paths during module resolution.
 2. Only the resolution paths of the immediate parent module are modified.
 
-----
 
-# ts-module-alias
+----
 
 Create aliases of directories and register custom module paths in Node.
 
@@ -14,8 +15,10 @@ It also allows you to register aliases and directories that will act just like `
 ## Install
 
 ```
-npm i --save @cshomo11/ts-module-alias
+npm i --save https://github.com/cbsi-cmg/ts-module-alias.git#main
 ```
+
+**Note:** This is not a publicly hosted fork of the package. So we will need to install using the GH clone link.
 
 ## Usage
 
@@ -37,7 +40,7 @@ Add your custom configuration to your `package.json` (in your application's root
 Initialize the new resolution rules within a module by creating an instance and passing the current module:
 
 ```ts
-import ModuleAlias from '@cshomo11/ts-module-alias';
+import ModuleAlias from '@cbsi-cmg/ts-module-alias';
 new ModuleAlias();
 ```
 
@@ -51,7 +54,7 @@ If you don't want to modify your `package.json` or you just prefer to set it all
 
 _Examples:_
 ```ts
-import ModuleAlias from '@cshomo11/ts-module-alias';
+import ModuleAlias from '@cbsi-cmg/ts-module-alias';
 const moduleAlias = new ModuleAlias(module);
 
 //
