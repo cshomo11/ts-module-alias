@@ -1,4 +1,4 @@
-# ts-module-alias - CBSI-CMG Fork
+# ts-module-alias - CNET Group Fork
 
 This package is a major refactor of [ilearnio/module-alias](https://github.com/ilearnio/module-alias) using TypeScript.  This package changes some behaviors of the original.  Namely:
 
